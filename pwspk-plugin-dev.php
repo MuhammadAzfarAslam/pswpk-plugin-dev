@@ -11,9 +11,12 @@
  */
 
 defined('ABSPATH') || die("You cant access this file path");
+define('PLUGIN_PATH', plugin_dir_path(__FILE__));
+define('PLUGIN_URL', plugin_dir_url(__FILE__));
 
-include plugin_dir_path(__FILE__)."inc/shortcodes.php";
-include plugin_dir_path(__FILE__)."inc/metaboxes.php";
+include PLUGIN_PATH."inc/shortcodes.php";
+include PLUGIN_PATH."inc/metaboxes.php";
+include PLUGIN_PATH."inc/custom_post_types.php";
 
 //add_filter('the_title', 'pwspk_the_title');
 function pwspk_the_title($title){
@@ -22,8 +25,8 @@ function pwspk_the_title($title){
 
 add_action('wp_enqueue_scripts', 'pwspk_wp_enqueue_scripts');
 function pwspk_wp_enqueue_scripts(){
-    wp_enqueue_style('pwspk_dev_plugin', plugin_dir_url(__FILE__)."assets/css/style.css");
-    wp_enqueue_script('pwspk_dev_script', plugin_dir_url(__FILE__)."assets/js/custom.js", array(), '1.0.0', true);
+    wp_enqueue_style('pwspk_dev_plugin', PLUGIN_URL."assets/css/style.css");
+    wp_enqueue_script('pwspk_dev_script', PLUGIN_URL."assets/js/custom.js", array(), '1.0.0', true);
 }
 
 add_action('admin_menu', 'pwspk_plugin_menu');
