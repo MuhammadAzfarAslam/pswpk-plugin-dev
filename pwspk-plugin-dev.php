@@ -13,6 +13,7 @@
 defined('ABSPATH') || die("You cant access this file path");
 
 include plugin_dir_path(__FILE__)."inc/shortcodes.php";
+include plugin_dir_path(__FILE__)."inc/metaboxes.php";
 
 //add_filter('the_title', 'pwspk_the_title');
 function pwspk_the_title($title){
