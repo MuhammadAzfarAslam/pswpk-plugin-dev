@@ -20,6 +20,7 @@ include PLUGIN_PATH."inc/metaboxes.php";
 include PLUGIN_PATH."inc/custom_post_types.php";
 include PLUGIN_PATH."inc/ajax.php";
 include PLUGIN_PATH."inc/db.php";
+include PLUGIN_PATH."inc/blocks.php";
 
 
 
